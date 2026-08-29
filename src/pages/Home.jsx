@@ -42,8 +42,8 @@ export default function Home() {
             <span>Launching Soon</span>
           </div> */}
 
-          {/* Main Title */}
-          <h1 className="hero-title text-3xl sm:text-5xl font-extrabold tracking-tight text-[#2D4A2D] mb-2">
+          {/* Main Title (Semantic H1 for SEO) */}
+          <h1 className="hero-title text-2xl sm:text-5xl font-extrabold tracking-tight text-[#2D4A2D] mb-2">
             Where Nutrition Meets <span className="italic-pink">Care.</span>
           </h1>
 
@@ -59,9 +59,13 @@ export default function Home() {
           {/* Feature Pills */}
 
           {/* Tagline */}
-          <div className="hero-tagline flex items-center gap-2 text-xs font-semibold tracking-wider text-[#5A6B5A]">
+          {/* <div className="hero-tagline flex items-center gap-2 text-xs font-semibold tracking-wider text-[#5A6B5A]">
             <Leaf size={14} className="text-[#3A5A2E]" />
             <span>Small Habits, Big Transformation</span>
+          </div> */}
+          <div className="inline-flex mt-5 items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FDE8E0] text-[#D4627A] text-xs font-semibold tracking-wider uppercase mb-5 border border-[#F5C6D0]">
+            <Sparkles className="w-3.5 h-3.5 animate-pulse text-[#D4627A]" />
+            <span>Start Your Wellness Journey With Us</span>
           </div>
         </div>
 

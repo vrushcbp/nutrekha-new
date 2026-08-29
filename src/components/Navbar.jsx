@@ -12,9 +12,11 @@ import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
+  { label: 'Purpose', href: '#purpose' },
   { label: 'Services', href: '#services' },
-  { label: 'Build a Plate', href: '#build-a-plate' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Feedback', href: '#feedback' },
+  { label: 'Blog', href: '#blog' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 export default function Navbar() {
