@@ -134,6 +134,8 @@ export default function BlogHub() {
                 alt={featuredPost.title}
                 className="blog-featured-image"
                 loading="lazy"
+                width="640"
+                height="400"
               />
               <div className="blog-featured-overlay" />
               <span className="blog-featured-badge">Featured Article</span>
@@ -211,6 +213,8 @@ export default function BlogHub() {
                     alt={post.title}
                     className="blog-card-img"
                     loading="lazy"
+                    width="400"
+                    height="240"
                   />
                   <span className="blog-card-pill">{post.category}</span>
                 </div>
@@ -256,7 +260,14 @@ export default function BlogHub() {
                     className="blog-popular-item"
                     onClick={() => handleOpenArticle(item)}
                   >
-                    <img src={item.image} alt={item.title} className="blog-popular-img" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="blog-popular-img"
+                      loading="lazy"
+                      width="64"
+                      height="64"
+                    />
                     <div>
                       <h5 className="blog-popular-item-title">{item.title}</h5>
                       <span className="blog-popular-item-time">{item.readTime}</span>
@@ -393,7 +404,13 @@ export default function BlogHub() {
 
             {/* Cover Image */}
             <div className="blog-modal-cover">
-              <img src={activeArticle.image} alt={activeArticle.title} className="w-full h-[280px] sm:h-[340px] object-cover rounded-2xl" />
+              <img
+                src={activeArticle.image}
+                alt={activeArticle.title}
+                className="w-full h-[280px] sm:h-[340px] object-cover rounded-2xl"
+                width="760"
+                height="340"
+              />
             </div>
 
             {/* Body */}
@@ -445,7 +462,14 @@ export default function BlogHub() {
                     className="blog-related-item"
                     onClick={() => setActiveArticle(rel)}
                   >
-                    <img src={rel.image} alt={rel.title} className="w-16 h-16 rounded-xl object-cover" />
+                    <img
+                      src={rel.image}
+                      alt={rel.title}
+                      className="w-16 h-16 rounded-xl object-cover"
+                      loading="lazy"
+                      width="64"
+                      height="64"
+                    />
                     <div>
                       <h5 className="text-xs font-bold text-[#2D4A2D] line-clamp-2">{rel.title}</h5>
                       <span className="text-[11px] text-slate-500">{rel.readTime}</span>

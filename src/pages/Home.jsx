@@ -98,6 +98,7 @@ export default function Home() {
                 href="tel:+917676482879"
                 className="btn-secondary hero-btn-secondary"
                 id="hero-call-cta"
+                aria-label="Call Nutrekha at +91 7676482879"
               >
                 <Phone size={17} />
                 <span>Call Us Now</span>

@@ -79,8 +79,8 @@ export default function AboutNutrekha() {
               nutrition guidance that is practical, compassionate, and backed by science.
             </p>
             <p>
-              Inspired by the values of care, patience, and nourishment, Nutrekha
-              combines evidence-based nutrition with personalized support to help you
+              Based in Pune and consulting clients globally, Nutrekha combines
+              evidence-based nutrition with personalized support to help you
               build healthy habits that last.
             </p>
             <p>

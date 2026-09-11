@@ -143,12 +143,13 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
+                <label htmlFor="consultation-name" className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
                   Full Name *
                 </label>
                 <div className="relative">
                   <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                   <input
+                    id="consultation-name"
                     type="text"
                     required
                     placeholder="e.g. Ananya Sharma"
@@ -161,12 +162,13 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
+                  <label htmlFor="consultation-phone" className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
                     Phone / WhatsApp *
                   </label>
                   <div className="relative">
                     <Phone size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                     <input
+                      id="consultation-phone"
                       type="tel"
                       required
                       placeholder="+91 98765 43210"
@@ -179,12 +181,13 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
+                  <label htmlFor="consultation-email" className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
                     Email Address
                   </label>
                   <div className="relative">
                     <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                     <input
+                      id="consultation-email"
                       type="email"
                       placeholder="ananya@example.com"
                       value={formData.email}
@@ -196,57 +199,37 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
-                    Selected Program
-                  </label>
-                  <select
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="nutrekha-form-input"
-                  >
-                    <option value="Weight Management">Weight Management</option>
-                    <option value="Fat Loss Programs">Fat Loss Programs</option>
-                    <option value="Clinical Nutrition">Clinical Nutrition</option>
-                    <option value="PMOS Nutrition">PMOS Nutrition</option>
-                    <option value="Diabetes Management">Diabetes Management</option>
-                    <option value="Thyroid Nutrition">Thyroid Nutrition</option>
-                    <option value="Women's Health">Women&apos;s Health</option>
-                    <option value="Sports & Fitness Nutrition">Sports &amp; Fitness Nutrition</option>
-                    <option value="Gut Health & Digestion">Gut Health &amp; Digestion</option>
-                    <option value="Corporate Wellness">Corporate Wellness</option>
-                    <option value="Family & Child Nutrition">Family &amp; Child Nutrition</option>
-                    <option value="Lifestyle Disease Management">Lifestyle Disease Management</option>
-                  </select>
-                </div>
-
-                {/* <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
-                    Preferred Time Slot
-                  </label>
-                  <div className="relative">
-                    <Calendar size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
-                    <select
-                      value={formData.preferredTime}
-                      onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                      className="nutrekha-form-input"
-                      style={{ paddingLeft: '44px' }}
-                    >
-                      <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
-                      <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
-                      <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
-                      <option value="Weekend Slot">Weekend Slot</option>
-                    </select>
-                  </div>
-                </div> */}
+              <div>
+                <label htmlFor="consultation-service" className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
+                  Selected Program
+                </label>
+                <select
+                  id="consultation-service"
+                  value={formData.service}
+                  onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                  className="nutrekha-form-input"
+                >
+                  <option value="Weight Management">Weight Management</option>
+                  <option value="Fat Loss Programs">Fat Loss Programs</option>
+                  <option value="Clinical Nutrition">Clinical Nutrition</option>
+                  <option value="PMOS Nutrition">PMOS Nutrition</option>
+                  <option value="Diabetes Management">Diabetes Management</option>
+                  <option value="Thyroid Nutrition">Thyroid Nutrition</option>
+                  <option value="Women's Health">Women&apos;s Health</option>
+                  <option value="Sports & Fitness Nutrition">Sports &amp; Fitness Nutrition</option>
+                  <option value="Gut Health & Digestion">Gut Health &amp; Digestion</option>
+                  <option value="Corporate Wellness">Corporate Wellness</option>
+                  <option value="Family & Child Nutrition">Family &amp; Child Nutrition</option>
+                  <option value="Lifestyle Disease Management">Lifestyle Disease Management</option>
+                </select>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
+                <label htmlFor="consultation-message" className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
                   Any Health Goals or Questions? (Optional)
                 </label>
                 <textarea
+                  id="consultation-message"
                   rows={2}
                   placeholder="Share any health conditions, dietary preferences, or specific goals..."
                   value={formData.message}

@@ -6161,6 +6161,17 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
+.footer-social-btn.footer-social-btn-inactive {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.footer-social-btn.footer-social-btn-inactive:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .footer-social-btn.instagram:hover {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   border-color: transparent;
