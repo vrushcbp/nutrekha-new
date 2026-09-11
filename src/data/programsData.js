@@ -162,17 +162,17 @@ export const PROGRAMS_DATA = [
     ],
   },
   {
-    id: 'pcos-nutrition',
-    slug: 'pcos-nutrition',
-    title: 'PCOS Nutrition',
+    id: 'PMOS-nutrition',
+    slug: 'PMOS-nutrition',
+    title: 'PMOS Nutrition',
     tag: 'Hormonal Health',
     iconName: 'Flower2',
     shortDesc: 'Root-cause nutritional support to balance reproductive hormones, regulate cycles, and manage insulin resistance.',
-    intro: 'Address PCOS and PCOD at its foundational root. We target androgen imbalances, insulin spikes, cystic inflammation, acne, and mood fluctuations through comforting, endocrine-nourishing whole foods.',
+    intro: 'Address PMOS and PCOD at its foundational root. We target androgen imbalances, insulin spikes, cystic inflammation, acne, and mood fluctuations through comforting, endocrine-nourishing whole foods.',
     whoIsThisFor: [
       'Women suffering from irregular menstrual cycles and missed periods',
       'Those facing stubborn weight gain around the abdomen due to insulin resistance',
-      'Individuals dealing with PCOS-induced cystic acne, hair fall, or facial hair',
+      'Individuals dealing with PMOS-induced cystic acne, hair fall, or facial hair',
       'Women seeking pre-conception hormonal harmony and fertility support',
     ],
     whatYouGet: [
@@ -193,7 +193,7 @@ export const PROGRAMS_DATA = [
       },
       {
         title: 'Stress & Cortisol Regulation',
-        desc: 'Herbal and dietary strategies to prevent adrenal PCOS flare-ups.',
+        desc: 'Herbal and dietary strategies to prevent adrenal PMOS flare-ups.',
         icon: 'Heart',
       },
       {

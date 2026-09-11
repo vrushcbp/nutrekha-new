@@ -14,11 +14,11 @@ export const FAQ_DATA = [
     category: 'Consultation',
   },
   {
-    id: 'pcos-support',
-    question: 'Can nutrition help with PCOS?',
+    id: 'PMOS-support',
+    question: 'Can nutrition help with PMOS?',
     answer:
-      'Absolutely. Our evidence-based PCOS nutrition protocol targets root hormonal drivers—specifically hyperinsulinemia, systemic inflammation, and elevated androgens. Through low-glycemic food pairing, omega-3 anti-inflammatory fats, and micro-nutrient timing, clients routinely experience regularized cycles, reduced androgenic symptoms, and natural weight loss.',
-    category: 'PCOS & Women’s Health',
+      'Absolutely. Our evidence-based PMOS nutrition protocol targets root hormonal drivers—specifically hyperinsulinemia, systemic inflammation, and elevated androgens. Through low-glycemic food pairing, omega-3 anti-inflammatory fats, and micro-nutrient timing, clients routinely experience regularized cycles, reduced androgenic symptoms, and natural weight loss.',
+    category: 'PMOS & Women’s Health',
   },
   {
     id: 'diabetes-management',

@@ -1,7 +1,7 @@
 export const BLOG_CATEGORIES = [
   'All',
   'Weight Loss',
-  'PCOS',
+  'PMOS',
   'Diabetes',
   'Healthy Eating',
   'Women’s Health',
@@ -12,29 +12,29 @@ export const BLOG_CATEGORIES = [
 
 export const BLOG_POSTS = [
   {
-    id: 'pcos-diet-guide-2026',
-    slug: 'pcos-diet-guide-natural-reversal',
-    title: 'The Ultimate Evidence-Based PCOS Diet Guide: Reversing Insulin Resistance Naturally',
-    excerpt: 'Discover how strategic food pairing, anti-inflammatory nutrition, and glycemic management can regularize periods, reduce acne, and support natural weight loss with PCOS.',
-    category: 'PCOS',
+    id: 'pmos-diet-guide-2026',
+    slug: 'pmos-diet-guide-natural-reversal',
+    title: 'The Ultimate Evidence-Based PMOS Diet Guide: Reversing Insulin Resistance Naturally',
+    excerpt: 'Discover how strategic food pairing, anti-inflammatory nutrition, and glycemic management can regularize periods, reduce acne, and support natural weight loss with PMOS.',
+    category: 'PMOS',
     readTime: '6 min read',
     date: 'August 28, 2026',
     author: 'Nutrekha Clinical Team',
     authorRole: 'Senior Clinical Nutritionist',
     image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
-    tags: ['PCOS', 'Hormone Health', 'Insulin Resistance', 'Women’s Health'],
+    tags: ['PMOS', 'Hormone Health', 'Insulin Resistance', 'Women’s Health'],
     content: `
-      <h2>Understanding the Root Cause of PCOS</h2>
-      <p>Polycystic Ovary Syndrome (PCOS) is primarily a metabolic and endocrine disorder driven by insulin resistance and chronic low-grade inflammation. Up to 70% of women with PCOS experience hyperinsulinemia, where the pancreas produces excess insulin to manage blood glucose.</p>
+      <h2>Understanding the Root Cause of PMOS</h2>
+      <p>Polycystic Menstrual Ovarian Syndrome (PMOS) is primarily a metabolic and endocrine disorder driven by insulin resistance and chronic low-grade inflammation. Up to 70% of women with PMOS experience hyperinsulinemia, where the pancreas produces excess insulin to manage blood glucose.</p>
       
-      <h3>3 Core Pillars of a PCOS Nutrition Protocol</h3>
+      <h3>3 Core Pillars of a PMOS Nutrition Protocol</h3>
       <ul>
         <li><strong>Glycemic Index &amp; Fiber Pairing:</strong> Always combine complex carbohydrates with protein and healthy fats to avoid sharp insulin spikes.</li>
         <li><strong>Anti-Inflammatory Anti-Oxidants:</strong> Include leafy greens, turmeric, omega-3 fatty acids, and berries to reduce ovarian oxidative stress.</li>
         <li><strong>Prebiotic Gut Support:</strong> A healthy gut microbiome metabolizes excess estrogen and improves insulin signaling.</li>
       </ul>
 
-      <h3>What to Avoid in PCOS</h3>
+      <h3>What to Avoid in PMOS</h3>
       <p>Avoid high-fructose corn syrups, artificial trans fats, and extreme calorie restriction which triggers cortisol spikes and worsens hormonal imbalances.</p>
     `,
     takeaway: 'Focus on nourishing your metabolism with whole food pairings rather than starving your body.',

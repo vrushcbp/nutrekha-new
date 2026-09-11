@@ -209,7 +209,7 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                     <option value="Weight Management">Weight Management</option>
                     <option value="Fat Loss Programs">Fat Loss Programs</option>
                     <option value="Clinical Nutrition">Clinical Nutrition</option>
-                    <option value="PCOS Nutrition">PCOS Nutrition</option>
+                    <option value="PMOS Nutrition">PMOS Nutrition</option>
                     <option value="Diabetes Management">Diabetes Management</option>
                     <option value="Thyroid Nutrition">Thyroid Nutrition</option>
                     <option value="Women's Health">Women&apos;s Health</option>
@@ -221,7 +221,7 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                   </select>
                 </div>
 
-                <div>
+                {/* <div>
                   <label className="block text-xs font-semibold uppercase tracking-wider text-[#2D4A2D] mb-1.5">
                     Preferred Time Slot
                   </label>
@@ -239,7 +239,7 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                       <option value="Weekend Slot">Weekend Slot</option>
                     </select>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div>

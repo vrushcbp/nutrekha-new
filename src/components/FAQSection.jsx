@@ -70,7 +70,7 @@ export default function FAQSection() {
           </h2>
 
           <p className="faq-subtitle">
-            Find clarity on consultations, personalized nutrition plans, weight management, PCOS, diabetes care, and sustainable healthy living.
+            Find clarity on consultations, personalized nutrition plans, weight management, PMOS, diabetes care, and sustainable healthy living.
           </p>
         </div>
 

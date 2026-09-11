@@ -8,7 +8,7 @@ const QUESTIONS = [
     title: 'What is your primary health goal right now?',
     options: [
       { label: 'Weight Loss & Body Fat Reduction', value: 'weight-loss', targetSlug: 'fat-loss-programs' },
-      { label: 'Manage a Medical Condition (PCOS, Thyroid, Diabetes, etc.)', value: 'clinical', targetSlug: 'pcos-nutrition' },
+      { label: 'Manage a Medical Condition (PMOS, Thyroid, Diabetes, etc.)', value: 'clinical', targetSlug: 'PMOS-nutrition' },
       { label: 'Fix Bloating, Acidity & Digestive Issues', value: 'gut', targetSlug: 'gut-health' },
       { label: 'Enhance Sports Stamina & Muscle Tone', value: 'fitness', targetSlug: 'sports-fitness-nutrition' },
       { label: 'Women’s Health (Pregnancy, Postpartum, Menopause)', value: 'women', targetSlug: 'womens-health' },
