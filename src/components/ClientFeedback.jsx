@@ -297,6 +297,9 @@ export default function ClientFeedback() {
                         src={item.image}
                         alt={item.name}
                         className="feedback-avatar-img"
+                        loading="lazy"
+                        width="52"
+                        height="52"
                         onError={(e) => {
                           e.currentTarget.style.display = 'none';
                           e.currentTarget.nextSibling.style.display = 'flex';

@@ -85,6 +85,8 @@ export default function FAQSection() {
                   alt="Nutrekha Personalized Nutritionist Consultation"
                   className="faq-illustration-img"
                   loading="lazy"
+                  width="600"
+                  height="700"
                 />
                 <div className="faq-illustration-overlay" />
               </div>

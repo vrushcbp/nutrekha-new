@@ -47,6 +47,8 @@ export default function AboutNutrekha() {
               alt="Nutrekha — personalized nutrition consultation with fresh, healthy food"
               className="about-image"
               loading="lazy"
+              width="600"
+              height="450"
             />
           </div>
           {/* Decorative accent behind image */}

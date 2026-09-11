@@ -71,9 +71,23 @@ export default function BlogHub() {
     document.body.style.overflow = 'unset';
   };
 
+  // Handle Escape key to close article modal
+  useEffect(() => {
+    if (!activeArticle) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleCloseArticle();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeArticle]);
+
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    if (!newsletterEmail || !newsletterEmail.includes('@')) return;
+    const trimmed = newsletterEmail.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!trimmed || !emailRegex.test(trimmed)) return;
     setNewsletterSubscribed(true);
   };
 
@@ -312,6 +326,7 @@ export default function BlogHub() {
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="blog-newsletter-input"
+                  aria-label="Email address for weekly newsletter"
                   required
                 />
                 <button type="submit" className="btn-primary py-3 px-6 text-sm">
@@ -332,6 +347,7 @@ export default function BlogHub() {
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
+            aria-labelledby="article-modal-title"
           >
             {/* Reading Progress Indicator */}
             <div className="blog-reader-progress-bar" />
@@ -355,7 +371,7 @@ export default function BlogHub() {
 
             {/* Article Header */}
             <span className="blog-modal-cat">{activeArticle.category}</span>
-            <h1 className="blog-modal-heading">{activeArticle.title}</h1>
+            <h2 id="article-modal-title" className="blog-modal-heading">{activeArticle.title}</h2>
 
             <div className="blog-modal-author-bar">
               <div className="blog-modal-author-info">

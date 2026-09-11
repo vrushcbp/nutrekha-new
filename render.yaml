@@ -1,0 +1,16 @@
+# Render Static Site Configuration for Nutrekha
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: nutrekha
+    runtime: static
+    buildCommand: npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_WEB3FORMS_ACCESS_KEY
+        sync: false # Configured securely in Render Dashboard (never committed)
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

@@ -64,7 +64,7 @@ export default function ProgramDetailView({ program, onClose, onOpenBooking }) {
   const MainIcon = ICON_MAP[program.iconName] || Sparkles;
 
   return (
-    <div className="program-detail-overlay">
+    <div className="program-detail-overlay" role="dialog" aria-modal="true" aria-labelledby="program-detail-title">
       <div className="program-detail-wrapper">
         {/* Top Sticky Navigation Bar */}
         <div className="program-detail-navbar">
@@ -103,9 +103,9 @@ export default function ProgramDetailView({ program, onClose, onOpenBooking }) {
               <span>{program.tag} Program</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#2D4A2D] mb-4 tracking-tight leading-tight">
+            <h2 id="program-detail-title" className="text-3xl sm:text-5xl font-extrabold text-[#2D4A2D] mb-4 tracking-tight leading-tight">
               {program.title}
-            </h1>
+            </h2>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
               {program.intro}

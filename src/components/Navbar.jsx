@@ -32,16 +32,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and listen for Escape when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = 'hidden';
+      const handleKeyDown = (e) => {
+        if (e.key === 'Escape') setMobileOpen(false);
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+      };
     } else {
       document.body.style.overflow = '';
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [mobileOpen]);
 
   const closeMobile = () => setMobileOpen(false);
@@ -51,7 +56,7 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* Logo */}
         <a href="/" className="navbar-logo" id="logo">
-          <img src="/nutrekha-logo.png" alt="Nutrekha Logo" />
+          <img src="/nutrekha-logo.png" alt="Nutrekha Logo" width="64" height="64" />
           <span className="navbar-logo-text">Nut<span className="navbar-logo-text2">rekha</span></span>
         </a>
 
@@ -74,6 +79,8 @@ export default function Navbar() {
           className={`mobile-toggle ${mobileOpen ? 'active' : ''}`}
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           id="mobile-toggle"
         >
           <span></span>

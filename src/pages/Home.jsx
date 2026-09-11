@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Leaf, Sparkles, CheckCircle2, Send, ShieldCheck } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import {
   BotanicalTopLeft,
   BotanicalBottomRight,
@@ -11,20 +10,6 @@ import NutrekhaPlate3D from '../components/NutrekhaPlate3D';
  * Home Page - Unique Coming Soon Experience
  */
 export default function Home() {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email || !email.includes('@')) return;
-
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 600);
-  };
 
   return (
     <section className="hero" id="hero">

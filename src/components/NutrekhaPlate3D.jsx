@@ -83,6 +83,9 @@ export default function NutrekhaPlate3D() {
               alt="Balanced Nutrekha breakfast plate"
               className="w-full h-full object-cover object-center"
               draggable={false}
+              width="280"
+              height="280"
+              fetchPriority="high"
             />
           </div>
         </div>

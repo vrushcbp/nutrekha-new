@@ -20,7 +20,7 @@ pnpm-lock.yaml
 # Environment files (never commit secrets)
 .env
 .env.*
-!.env.example   # keep a template if you want
+!.env.example
 
 # Logs & debug files
 npm-debug.log*

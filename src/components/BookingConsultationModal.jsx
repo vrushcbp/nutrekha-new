@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { X, CheckCircle2, Calendar, Phone, Mail, User, Sparkles, Send } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { X, CheckCircle2, Calendar, Phone, Mail, User, Sparkles, Send, AlertCircle } from 'lucide-react';
+import { submitConsultationLead } from '../services/consultationService';
 
 export default function BookingConsultationModal({ isOpen, onClose, defaultService = '' }) {
   const [formData, setFormData] = useState({
@@ -9,25 +10,83 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
     service: defaultService || 'Weight Management',
     preferredTime: 'Morning (9 AM - 12 PM)',
     message: '',
+    botcheck: false,
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  // Handle Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        handleResetAndClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone) return;
+    if (loading) return;
+    setError('');
+
+    const trimmedName = formData.name.trim();
+    if (!trimmedName || trimmedName.length < 2) {
+      setError('Please enter your full name (at least 2 characters).');
+      return;
+    }
+
+    const trimmedPhone = formData.phone.trim();
+    const digitsOnly = trimmedPhone.replace(/\D/g, '');
+    if (!trimmedPhone || digitsOnly.length < 7 || digitsOnly.length > 16) {
+      setError('Please enter a valid contact phone number (at least 7 digits).');
+      return;
+    }
+
+    const trimmedEmail = formData.email.trim();
+    if (trimmedEmail) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(trimmedEmail)) {
+        setError('Please enter a valid email address.');
+        return;
+      }
+    }
+
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const result = await submitConsultationLead(formData);
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.error || 'Unable to submit your consultation request. Please try again.');
+      }
+    } catch {
+      setError('An unexpected error occurred. Please check your connection and try again.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 700);
+    }
   };
 
   const handleResetAndClose = () => {
+    if (submitted) {
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        service: defaultService || 'Weight Management',
+        preferredTime: 'Morning (9 AM - 12 PM)',
+        message: '',
+        botcheck: false,
+      });
+    }
     setSubmitted(false);
     setLoading(false);
+    setError('');
     onClose();
   };
 
@@ -38,11 +97,13 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
+        aria-labelledby="booking-modal-title"
+        aria-describedby="booking-modal-desc"
       >
         <button
           className="nutrekha-modal-close"
           onClick={handleResetAndClose}
-          aria-label="Close modal"
+          aria-label="Close consultation modal"
         >
           <X size={20} />
         </button>
@@ -72,10 +133,10 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                 <Sparkles size={13} className="animate-pulse" />
                 <span>Start Your Wellness Journey</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-[#2D4A2D]">
+              <h3 id="booking-modal-title" className="text-2xl sm:text-3xl font-bold text-[#2D4A2D]">
                 Schedule Your <span className="italic-pink">Consultation</span>
               </h3>
-              <p className="text-slate-600 text-sm mt-1">
+              <p id="booking-modal-desc" className="text-slate-600 text-sm mt-1">
                 Take the first step toward lifelong vibrant health with personalized, science-backed guidance.
               </p>
             </div>
@@ -194,9 +255,29 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                 />
               </div>
 
+              {error && (
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium" role="alert">
+                  <AlertCircle size={16} className="text-red-500 flex-shrink-0" />
+                  <span>{error}</span>
+                </div>
+              )}
+
+              {/* Honeypot for spam bot detection (hidden from genuine users and screen readers) */}
+              <div style={{ display: 'none' }} aria-hidden="true">
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  checked={formData.botcheck}
+                  onChange={(e) => setFormData({ ...formData, botcheck: e.target.checked })}
+                />
+              </div>
+
               <button
                 type="submit"
                 disabled={loading}
+                aria-busy={loading}
                 className="btn-primary w-full justify-center text-base py-3.5 shadow-lg"
               >
                 {loading ? (

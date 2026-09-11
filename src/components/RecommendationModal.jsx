@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Sparkles, ArrowRight, CheckCircle2, RotateCcw } from 'lucide-react';
 import { PROGRAMS_DATA } from '../data/programsData';
 
@@ -42,6 +42,18 @@ export default function RecommendationModal({ isOpen, onClose, onSelectProgram, 
   const [answers, setAnswers] = useState({});
   const [recommendedProgram, setRecommendedProgram] = useState(null);
 
+  // Handle Escape key
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSelectOption = (option) => {
@@ -74,11 +86,12 @@ export default function RecommendationModal({ isOpen, onClose, onSelectProgram, 
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
+        aria-labelledby="quiz-modal-title"
       >
         <button
           className="nutrekha-modal-close"
           onClick={onClose}
-          aria-label="Close modal"
+          aria-label="Close recommendation quiz"
         >
           <X size={20} />
         </button>
@@ -90,7 +103,7 @@ export default function RecommendationModal({ isOpen, onClose, onSelectProgram, 
               <span>Your Ideal Match</span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#2D4A2D] mb-2">
+            <h3 id="quiz-modal-title" className="text-2xl sm:text-3xl font-bold text-[#2D4A2D] mb-2">
               We Recommend:{' '}
               <span className="italic-pink">{recommendedProgram.title}</span>
             </h3>
@@ -171,7 +184,7 @@ export default function RecommendationModal({ isOpen, onClose, onSelectProgram, 
                 />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-[#2D4A2D]">
+              <h3 id="quiz-modal-title" className="text-xl sm:text-2xl font-bold text-[#2D4A2D]">
                 {QUESTIONS[currentStep].title}
               </h3>
             </div>
