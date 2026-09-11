@@ -16,6 +16,17 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  // Sync defaultService when modal opens
+  useEffect(() => {
+    if (defaultService) {
+      let matched = defaultService;
+      if (defaultService.toLowerCase().includes('nourish')) matched = 'Nourish (1 Month)';
+      else if (defaultService.toLowerCase().includes('transform')) matched = 'Transform (3 Months)';
+      else if (defaultService.toLowerCase().includes('thrive')) matched = 'Thrive (6 Months)';
+      setFormData((prev) => ({ ...prev, service: matched }));
+    }
+  }, [defaultService, isOpen]);
+
   // Handle Escape key
   useEffect(() => {
     if (!isOpen) return;
@@ -209,18 +220,25 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="nutrekha-form-input"
                 >
-                  <option value="Weight Management">Weight Management</option>
-                  <option value="Fat Loss Programs">Fat Loss Programs</option>
-                  <option value="Clinical Nutrition">Clinical Nutrition</option>
-                  <option value="PMOS Nutrition">PMOS Nutrition</option>
-                  <option value="Diabetes Management">Diabetes Management</option>
-                  <option value="Thyroid Nutrition">Thyroid Nutrition</option>
-                  <option value="Women's Health">Women&apos;s Health</option>
-                  <option value="Sports & Fitness Nutrition">Sports &amp; Fitness Nutrition</option>
-                  <option value="Gut Health & Digestion">Gut Health &amp; Digestion</option>
-                  <option value="Corporate Wellness">Corporate Wellness</option>
-                  <option value="Family & Child Nutrition">Family &amp; Child Nutrition</option>
-                  <option value="Lifestyle Disease Management">Lifestyle Disease Management</option>
+                  <optgroup label="Duration Plans">
+                    <option value="Nourish (1 Month)">Nourish — 1 Month (₹2,999)</option>
+                    <option value="Transform (3 Months)">Transform — 3 Months (₹7,499)</option>
+                    <option value="Thrive (6 Months)">Thrive — 6 Months (₹11,999)</option>
+                  </optgroup>
+                  <optgroup label="Specialized Health Programs">
+                    <option value="Weight Management">Weight Management</option>
+                    <option value="Fat Loss Programs">Fat Loss Programs</option>
+                    <option value="Clinical Nutrition">Clinical Nutrition</option>
+                    <option value="PMOS Nutrition">PMOS Nutrition</option>
+                    <option value="Diabetes Management">Diabetes Management</option>
+                    <option value="Thyroid Nutrition">Thyroid Nutrition</option>
+                    <option value="Women's Health">Women&apos;s Health</option>
+                    <option value="Sports & Fitness Nutrition">Sports &amp; Fitness Nutrition</option>
+                    <option value="Gut Health & Digestion">Gut Health &amp; Digestion</option>
+                    <option value="Corporate Wellness">Corporate Wellness</option>
+                    <option value="Family & Child Nutrition">Family &amp; Child Nutrition</option>
+                    <option value="Lifestyle Disease Management">Lifestyle Disease Management</option>
+                  </optgroup>
                 </select>
               </div>
 

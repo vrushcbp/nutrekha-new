@@ -648,3 +648,68 @@ export const PROGRAMS_DATA = [
     ],
   },
 ];
+
+/**
+ * Nutrekha Duration-Based Nutrition Programs
+ * Exact pricing, duration, and feature sets per approved design
+ */
+export const DURATION_PROGRAMS = [
+  {
+    id: 'nourish',
+    duration: '1 MONTH',
+    name: 'Nourish',
+    price: '₹2,999',
+    popular: false,
+    tagline: 'Ideal foundation to begin your personalized wellness journey',
+    features: [
+      'Initial detailed consultation',
+      'Personalized diet plan',
+      '4 weekly consultations',
+      'Diet modifications based on progress',
+      'Lifestyle & habit guidance',
+      'WhatsApp support throughout',
+    ],
+  },
+  {
+    id: 'transform',
+    duration: '3 MONTHS',
+    name: 'Transform',
+    price: '₹7,499',
+    popular: true,
+    badge: 'MOST POPULAR',
+    tagline: 'Our recommended timeframe for deep metabolic adaptation & visible results',
+    features: [
+      'Initial detailed consultation',
+      'Personalized diet plan',
+      '12 weekly consultations',
+      'Diet modifications based on progress',
+      'Lifestyle & habit guidance',
+      'Practical nutrition guidance',
+      'WhatsApp support throughout',
+    ],
+  },
+  {
+    id: 'thrive',
+    duration: '6 MONTHS',
+    name: 'Thrive',
+    price: '₹11,999',
+    popular: false,
+    tagline: 'Comprehensive transformation for sustainable lifelong health & habit mastery',
+    features: [
+      'Initial detailed consultation',
+      'Personalized diet plan',
+      '24 weekly consultations',
+      'Diet modifications based on progress',
+      'Lifestyle & habit coaching',
+      'Guidance for eating out, travel & social occasions',
+      'WhatsApp support throughout',
+    ],
+  },
+];
+
+export const DURATION_BENEFITS = [
+  'Personalized Nutrition Plans',
+  'Weekly Follow-ups',
+  'Diet Modifications Based on Progress',
+  'WhatsApp Support',
+];
