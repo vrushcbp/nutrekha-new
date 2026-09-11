@@ -74,7 +74,7 @@ const STATS = [
   {
     icon: Users,
     target: 1800,
-    label: 'Clients Consulted',
+    label: 'Happy Clients',
     suffix: '+',
     delay: 0,
   },
@@ -95,7 +95,7 @@ const STATS = [
   {
     icon: CalendarDays,
     target: 4,
-    label: 'Years of Experience',
+    label: 'Years of Wellness Guidance',
     suffix: '+',
     delay: 360,
   },

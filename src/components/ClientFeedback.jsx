@@ -344,10 +344,10 @@ export default function ClientFeedback() {
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="feedback-trust-eyebrow">Proven Credibility</span>
             <h3 className="text-2xl sm:text-3xl font-bold text-[#2D4A2D] mb-2">
-              Transforming Lives With Measurable Results
+              Transforming Lives Through <span className="italic-pink">Better Nutrition</span>
             </h3>
             <p className="text-slate-600 text-sm">
-              Thousands of individuals have trusted Nutrekha to build lasting, sustainable health habits.
+              Thousands of individuals have trusted Nutrekha to achieve their health and wellness goals.
             </p>
           </div>
 

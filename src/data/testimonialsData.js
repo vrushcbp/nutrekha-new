@@ -68,7 +68,7 @@ export const TESTIMONIALS_DATA = [
 
 export const TRUST_METRICS = [
   { target: 1800, suffix: '+', label: 'Happy Clients', desc: 'Transformed through evidence-based nutrition' },
-  { target: 7, suffix: 'k+', label: 'Personalised Diet Plans', desc: 'Crafted specifically to unique bio-needs' },
+  { target: 7000, suffix: '+', label: 'Personalized Diet Plans', desc: 'Crafted specifically to unique bio-needs' },
   { target: 95, suffix: '%', label: 'Client Satisfaction', desc: 'Consistent 5-star transformation feedback' },
   { target: 4, suffix: '+', label: 'Years of Wellness Guidance', desc: 'Dedication to sustainable preventive care' },
 ];

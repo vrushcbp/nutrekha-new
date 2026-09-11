@@ -109,7 +109,7 @@ export default function FAQSection() {
                 </div>
                 <div>
                   <div className="faq-trust-title">4.9 / 5.0 Rating</div>
-                  <div className="faq-trust-subtitle">5,000+ Transformations</div>
+                  <div className="faq-trust-subtitle">1,800+ Happy Clients</div>
                 </div>
               </div>
 
