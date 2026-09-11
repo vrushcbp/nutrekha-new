@@ -74,15 +74,15 @@ const STATS = [
   {
     icon: Users,
     target: 1800,
-    label: 'Clients Consulted',
+    label: 'Happy Clients',
     suffix: '+',
     delay: 0,
   },
   {
     icon: Salad,
-    target: 7,
+    target: 7000,
     label: 'Personalized Diet Plans',
-    suffix: 'k+',
+    suffix: '+',
     delay: 120,
   },
   {
@@ -95,7 +95,7 @@ const STATS = [
   {
     icon: CalendarDays,
     target: 4,
-    label: 'Years of Experience',
+    label: 'Years of Wellness Guidance',
     suffix: '+',
     delay: 360,
   },
