@@ -76,7 +76,7 @@ export default function Footer() {
                   <Facebook size={18} />
                 </a>
                 <a
-                  href="https://wa.me/917676482879"
+                  href="https://wa.me/917676482879?text=Hi%20Nutrekha%20%F0%9F%91%8B%20I%20came%20across%20your%20website%20and%20I%27m%20interested%20in%20a%20personalised%20diet%20consultation.%20Could%20you%20please%20share%20more%20details%20about%20your%20programs%3F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-social-btn whatsapp"
@@ -234,7 +234,7 @@ export default function Footer() {
                 <div className="footer-contact-details">
                   <span className="footer-contact-label">Instant Consultation</span>
                   <a
-                    href="https://wa.me/917676482879"
+                  href="https://wa.me/917676482879?text=Hi%20Nutrekha%20%F0%9F%91%8B%20I%20came%20across%20your%20website%20and%20I%27m%20interested%20in%20a%20personalised%20diet%20consultation.%20Could%20you%20please%20share%20more%20details%20about%20your%20programs%3F"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="footer-whatsapp-badge"
