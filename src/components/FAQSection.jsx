@@ -10,6 +10,7 @@ import {
   MessageCircle,
   Star,
   Users,
+  ArrowRight,
 } from 'lucide-react';
 import { FAQ_DATA } from '../data/faqData';
 import BookingConsultationModal from './BookingConsultationModal';
@@ -188,10 +189,12 @@ export default function FAQSection() {
 
           <button
             onClick={() => setIsBookingOpen(true)}
-            className="btn-primary text-xs sm:text-sm py-3 px-6 shadow-md whitespace-nowrap"
+            className="btn-primary text-xs sm:text-sm py-3 px-6 shadow-md whitespace-nowrap group flex-shrink-0"
+            id="faq-book-consultation-btn"
           >
             <Calendar size={16} />
             <span>Book Consultation</span>
+            <ArrowRight size={14} className="opacity-75 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </div>

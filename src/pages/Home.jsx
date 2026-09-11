@@ -83,7 +83,7 @@ export default function Home() {
             </div>
 
             {/* CTA Buttons */}
-            {/* <div className="hero-cta-group">
+            <div className="hero-cta-group">
               <button
                 className="btn-primary hero-btn-primary"
                 onClick={() => setIsBookingOpen(true)}
@@ -102,7 +102,7 @@ export default function Home() {
                 <Phone size={17} />
                 <span>Call Us Now</span>
               </a>
-            </div> */}
+            </div>
 
             {/* Trust / Stats Row */}
             <div className="hero-trust-row">
