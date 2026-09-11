@@ -1568,6 +1568,7 @@
     opacity: 0;
     transform: translateY(36px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2327,6 +2328,7 @@
     opacity: 0;
     transform: translateY(32px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2517,8 +2519,13 @@
 }
 
 @keyframes detailFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .program-detail-wrapper {
@@ -2543,6 +2550,7 @@
     opacity: 0;
     transform: translateY(40px) scale(0.98);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -2777,7 +2785,10 @@
 
 .nutrekha-form-input {
   width: 100%;
-  padding: 12px 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+  padding-left: 50px !important;
   border-radius: 12px;
   border: 1.5px solid var(--color-nutrekha-border);
   background: white;
@@ -2788,9 +2799,18 @@
   transition: all 0.25s ease;
 }
 
+.nutrekha-form-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
 .nutrekha-form-input:focus {
   border-color: var(--color-nutrekha-pink);
   box-shadow: 0 0 0 3px rgba(212, 98, 122, 0.15);
+}
+
+.nutrekha-form-input-has-icon {
+  padding-left: 44px !important;
 }
 
 /* ============================================
@@ -2978,9 +2998,12 @@
 }
 
 @keyframes floatSlow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
+
   50% {
     transform: translateY(-20px) scale(1.05);
   }
@@ -4346,10 +4369,12 @@
   .blog-grid {
     grid-template-columns: 1fr;
   }
+
   .faq-help-card {
     flex-direction: column;
     text-align: center;
   }
+
   .blog-modal-content {
     padding: 28px 20px;
   }
@@ -5507,51 +5532,74 @@
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
   .blog-featured-card {
     grid-template-columns: 1fr;
   }
+
   .blog-featured-image-wrap {
     min-height: 280px;
   }
+
   .blog-main-layout {
     grid-template-columns: 1fr;
   }
+
   .blog-sidebar {
     display: none;
   }
 }
 
 @media (max-width: 768px) {
+
   .faq-section,
   .blog-section {
     padding: 64px 0 72px;
   }
+
   .faq-illustration-frame {
     height: 360px;
   }
-  .faq-trust-badge-1 { top: -10px; left: 10px; }
-  .faq-trust-badge-2 { bottom: 10px; right: -10px; }
-  .faq-trust-badge-3 { display: none; }
+
+  .faq-trust-badge-1 {
+    top: -10px;
+    left: 10px;
+  }
+
+  .faq-trust-badge-2 {
+    bottom: 10px;
+    right: -10px;
+  }
+
+  .faq-trust-badge-3 {
+    display: none;
+  }
+
   .faq-bottom-help-card {
     flex-direction: column;
     text-align: center;
   }
+
   .faq-help-left {
     flex-direction: column;
     text-align: center;
   }
+
   .blog-articles-grid {
     grid-template-columns: 1fr;
   }
+
   .blog-newsletter-form {
     flex-direction: column;
   }
+
   .blog-newsletter-input {
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+
   .faq-container,
   .blog-container {
     padding: 0 16px;

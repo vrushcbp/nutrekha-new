@@ -86,14 +86,14 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                   Full Name *
                 </label>
                 <div className="relative">
-                  <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                  <User size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                   <input
                     type="text"
                     required
                     placeholder="e.g. Ananya Sharma"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="nutrekha-form-input pl-10"
+                    className="nutrekha-form-input"
                   />
                 </div>
               </div>
@@ -104,14 +104,15 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                     Phone / WhatsApp *
                   </label>
                   <div className="relative">
-                    <Phone size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <Phone size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                     <input
                       type="tel"
                       required
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="nutrekha-form-input pl-10"
+                      className="nutrekha-form-input"
+                      style={{ paddingLeft: '44px' }}
                     />
                   </div>
                 </div>
@@ -121,13 +122,14 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                     Email Address
                   </label>
                   <div className="relative">
-                    <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                    <Mail size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                     <input
                       type="email"
                       placeholder="ananya@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="nutrekha-form-input pl-10"
+                      className="nutrekha-form-input"
+                      style={{ paddingLeft: '44px' }}
                     />
                   </div>
                 </div>
@@ -163,11 +165,12 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                     Preferred Time Slot
                   </label>
                   <div className="relative">
-                    <Calendar size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
+                    <Calendar size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none z-10" />
                     <select
                       value={formData.preferredTime}
                       onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                      className="nutrekha-form-input pl-10"
+                      className="nutrekha-form-input"
+                      style={{ paddingLeft: '44px' }}
                     >
                       <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
                       <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
