@@ -80,9 +80,9 @@ const STATS = [
   },
   {
     icon: Salad,
-    target: 7,
+    target: 7000,
     label: 'Personalized Diet Plans',
-    suffix: 'k+',
+    suffix: '+',
     delay: 120,
   },
   {
