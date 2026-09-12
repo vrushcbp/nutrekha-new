@@ -10,66 +10,8 @@ import {
   ArrowRight,
   Trophy,
 } from 'lucide-react';
-import { TESTIMONIALS_DATA, TRUST_METRICS } from '../data/testimonialsData';
+import { TESTIMONIALS_DATA } from '../data/testimonialsData';
 import BookingConsultationModal from './BookingConsultationModal';
-
-/**
- * Animated counter hook for Trust Impact Metrics
- */
-function useCounter(target, duration = 2400, shouldStart = false) {
-  const [count, setCount] = useState(0);
-  const rafRef = useRef(null);
-
-  useEffect(() => {
-    if (!shouldStart) return;
-
-    let startTime = null;
-    const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-    const animate = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOutCubic(progress);
-      const currentVal = Math.round(target * eased);
-
-      setCount(currentVal);
-
-      if (progress < 1) {
-        rafRef.current = requestAnimationFrame(animate);
-      }
-    };
-
-    rafRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, [shouldStart, target, duration]);
-
-  return count;
-}
-
-function TrustMetricCard({ target, suffix, label, desc, shouldAnimate, delay = 0 }) {
-  const count = useCounter(target, 2400, shouldAnimate);
-  const formatted = count.toLocaleString('en-IN');
-
-  return (
-    <div
-      className="trust-metric-card"
-      style={{ animationDelay: `${delay}ms` }}
-      data-animate={shouldAnimate ? 'true' : 'false'}
-    >
-      <div className="trust-metric-number">
-        {formatted}
-        <span className="trust-metric-suffix">{suffix}</span>
-      </div>
-      <div className="trust-metric-label">{label}</div>
-      <div className="trust-metric-desc">{desc}</div>
-      <div className="trust-metric-shimmer" />
-    </div>
-  );
-}
 
 export default function ClientFeedback() {
   const [isVisible, setIsVisible] = useState(false);
@@ -337,33 +279,6 @@ export default function ClientFeedback() {
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
-        </div>
-
-        {/* Trust Indicators Section */}
-        <div className={`feedback-trust-section ${isVisible ? 'feedback-visible' : ''}`}>
-          <div className="text-center max-w-xl mx-auto mb-10">
-            <span className="feedback-trust-eyebrow">Proven Credibility</span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-[#2D4A2D] mb-2">
-              Transforming Lives Through <span className="italic-pink">Better Nutrition</span>
-            </h3>
-            <p className="text-slate-600 text-sm">
-              Thousands of individuals have trusted Nutrekha to achieve their health and wellness goals.
-            </p>
-          </div>
-
-          <div className="feedback-trust-grid">
-            {TRUST_METRICS.map((metric, idx) => (
-              <TrustMetricCard
-                key={metric.label}
-                target={metric.target}
-                suffix={metric.suffix}
-                label={metric.label}
-                desc={metric.desc}
-                shouldAnimate={isVisible}
-                delay={idx * 120}
-              />
-            ))}
-          </div>
         </div>
 
         {/* Bottom CTA Banner */}

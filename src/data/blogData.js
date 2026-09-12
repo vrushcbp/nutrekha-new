@@ -20,7 +20,7 @@ export const BLOG_POSTS = [
     readTime: '6 min read',
     date: 'August 28, 2026',
     author: 'Nutrekha Clinical Team',
-    authorRole: 'Senior Clinical Nutritionist',
+    authorRole: 'Clinical Nutritionist',
     image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
     tags: ['PMOS', 'Hormone Health', 'Insulin Resistance', 'Women’s Health'],
     content: `

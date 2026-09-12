@@ -128,7 +128,7 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
               Consultation Scheduled!
             </h3>
             <p className="text-slate-600 mb-6 max-w-md mx-auto leading-relaxed">
-              Thank you, <strong className="text-[#2D4A2D]">{formData.name}</strong>. Our senior nutritionist will reach out to you shortly on <strong className="text-[#2D4A2D]">{formData.phone}</strong> to confirm your slot for <span className="text-[#D4627A] font-semibold">{formData.service}</span>.
+              Thank you, <strong className="text-[#2D4A2D]">{formData.name}</strong>. Our nutritionist will reach out to you shortly on <strong className="text-[#2D4A2D]">{formData.phone}</strong> to confirm your slot for <span className="text-[#D4627A] font-semibold">{formData.service}</span>.
             </p>
             <button
               onClick={handleResetAndClose}

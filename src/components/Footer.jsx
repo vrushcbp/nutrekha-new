@@ -34,7 +34,7 @@ function WhatsAppIcon({ size = 18, className = '' }) {
 
 const OFFICIAL_WHATSAPP_NUMBER = '917676482879';
 const WHATSAPP_PREFILLED_MESSAGE =
-  "Hi Nutrekha \u{1F44B} I came across your website and I'm interested in a personalised diet consultation. Could you please share more details about your programs and how I can get started? \u{1F60A}";
+  "Hi Nutrekha, I came across your website and I'm interested in a personalised diet consultation. Could you please share more details about your programs and how I can get started?";
 const WHATSAPP_URL = `https://wa.me/${OFFICIAL_WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_PREFILLED_MESSAGE)}`;
 
 /**
