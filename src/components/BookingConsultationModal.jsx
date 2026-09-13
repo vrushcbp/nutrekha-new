@@ -221,9 +221,9 @@ export default function BookingConsultationModal({ isOpen, onClose, defaultServi
                   className="nutrekha-form-input"
                 >
                   <optgroup label="Duration Plans">
-                    <option value="Nourish (1 Month)">Nourish — 1 Month (₹2,999)</option>
-                    <option value="Transform (3 Months)">Transform — 3 Months (₹7,499)</option>
-                    <option value="Thrive (6 Months)">Thrive — 6 Months (₹11,999)</option>
+                    <option value="Nourish (1 Month)">Nourish — 1 Month (₹2,549 Special Offer)</option>
+                    <option value="Transform (3 Months)">Transform — 3 Months (₹6,374 Special Offer)</option>
+                    <option value="Thrive (6 Months)">Thrive — 6 Months (₹10,199 Special Offer)</option>
                   </optgroup>
                   <optgroup label="Specialized Health Programs">
                     <option value="Weight Management">Weight Management</option>

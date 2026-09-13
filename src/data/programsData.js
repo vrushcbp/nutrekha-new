@@ -650,15 +650,38 @@ export const PROGRAMS_DATA = [
 ];
 
 /**
+ * Nutrekha Promotional Welcome Offer Configuration
+ * Easily configurable / toggleable for future promotional campaigns
+ */
+export const WELCOME_OFFER_CONFIG = {
+  active: true,
+  discountPercent: 15,
+  offerLabel: '15% OFF',
+  offerBadge: 'WELCOME OFFER – 15% OFF',
+  bannerEyebrow: 'LIMITED TIME',
+  bannerHeadline: 'Welcome to Nutrekha — Enjoy 15% OFF on all nutrition programs',
+};
+
+/**
  * Nutrekha Duration-Based Nutrition Programs
  * Exact pricing, duration, and feature sets per approved design
+ * Includes temporary 15% OFF Welcome Offer pricing:
+ * - Nourish: ₹2,999 -> ₹2,549
+ * - Transform: ₹7,499 -> ₹6,374
+ * - Thrive: ₹11,999 -> ₹10,199
  */
 export const DURATION_PROGRAMS = [
   {
     id: 'nourish',
     duration: '1 MONTH',
     name: 'Nourish',
-    price: '₹2,999',
+    originalPrice: '₹2,999',
+    price: '₹2,549',
+    offerPrice: '₹2,549',
+    discountPercent: 15,
+    discountLabel: '15% OFF',
+    offerBadge: 'WELCOME OFFER – 15% OFF',
+    onOffer: true,
     popular: false,
     tagline: 'Ideal foundation to begin your personalized wellness journey',
     features: [
@@ -674,7 +697,13 @@ export const DURATION_PROGRAMS = [
     id: 'transform',
     duration: '3 MONTHS',
     name: 'Transform',
-    price: '₹7,499',
+    originalPrice: '₹7,499',
+    price: '₹6,374',
+    offerPrice: '₹6,374',
+    discountPercent: 15,
+    discountLabel: '15% OFF',
+    offerBadge: 'WELCOME OFFER – 15% OFF',
+    onOffer: true,
     popular: true,
     badge: 'MOST POPULAR',
     tagline: 'Our recommended timeframe for deep metabolic adaptation & visible results',
@@ -692,7 +721,13 @@ export const DURATION_PROGRAMS = [
     id: 'thrive',
     duration: '6 MONTHS',
     name: 'Thrive',
-    price: '₹11,999',
+    originalPrice: '₹11,999',
+    price: '₹10,199',
+    offerPrice: '₹10,199',
+    discountPercent: 15,
+    discountLabel: '15% OFF',
+    offerBadge: 'WELCOME OFFER – 15% OFF',
+    onOffer: true,
     popular: false,
     tagline: 'Comprehensive transformation for sustainable lifelong health & habit mastery',
     features: [

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import {
   Sparkles,
   ArrowRight,
+  Gift,
   HelpCircle,
   Check,
   CheckCircle2,
@@ -22,6 +23,7 @@ import {
   PROGRAMS_DATA,
   DURATION_PROGRAMS,
   DURATION_BENEFITS,
+  WELCOME_OFFER_CONFIG,
 } from '../data/programsData';
 import ProgramDetailView from './ProgramDetailView';
 import BookingConsultationModal from './BookingConsultationModal';
@@ -132,10 +134,13 @@ export default function PersonalizedPrograms() {
           </p>
 
           {/* Promotional message banner per reference design */}
-          <div className="duration-promo-banner">
-            <Sparkles size={18} className="duration-promo-icon animate-pulse" />
+          <div className="duration-promo-banner" role="region" aria-label="Limited Time Welcome Offer">
+            <div className="duration-promo-eyebrow">
+              <Sparkles size={13} className="duration-promo-sparkle animate-pulse" />
+              <span>{WELCOME_OFFER_CONFIG.bannerEyebrow || 'LIMITED TIME'}</span>
+            </div>
             <p className="duration-promo-text">
-              INVEST IN YOUR HEALTH TODAY, AND ENJOY MORE WHEN YOU COMMIT FOR LONGER!
+              Welcome to Nutrekha — Enjoy <strong className="duration-promo-highlight">15% OFF</strong> on all nutrition programs
             </p>
           </div>
         </div>
@@ -149,18 +154,37 @@ export default function PersonalizedPrograms() {
                 key={prog.id}
                 className={`duration-card ${isPopular ? 'popular' : ''}`}
               >
-                {isPopular && (
-                  <div className="duration-badge-popular">
-                    <Sparkles size={12} />
-                    <span>{prog.badge || 'MOST POPULAR'}</span>
-                  </div>
-                )}
+                {/* 🎁 WELCOME OFFER – 15% OFF Pill Badge (Consistent across ALL 3 cards) */}
+                <div className="duration-card-offer-badge" aria-label={prog.offerBadge || 'Welcome Offer 15% OFF'}>
+                  <Gift size={13} strokeWidth={2.4} className="duration-offer-icon" aria-hidden="true" />
+                  <span>{prog.offerBadge || 'WELCOME OFFER – 15% OFF'}</span>
+                </div>
 
                 <div className="duration-card-header">
-                  <span className="duration-tag">{prog.duration}</span>
+                  <div className="duration-tag-row">
+                    <span className="duration-tag">{prog.duration}</span>
+                    {isPopular && (
+                      <span className="duration-popular-chip">
+                        <Sparkles size={11} className="duration-chip-sparkle" aria-hidden="true" />
+                        <span>{prog.badge || 'MOST POPULAR'}</span>
+                      </span>
+                    )}
+                  </div>
                   <h3 className="duration-card-title">{prog.name}</h3>
                   <div className="duration-card-price-wrap">
-                    <span className="duration-card-price">{prog.price}</span>
+                    {prog.originalPrice && (
+                      <div className="duration-original-price-row">
+                        <span className="sr-only">Original price: </span>
+                        <span className="duration-original-price">{prog.originalPrice}</span>
+                        {prog.discountLabel && (
+                          <span className="duration-discount-tag">{prog.discountLabel}</span>
+                        )}
+                      </div>
+                    )}
+                    <div className="duration-offer-price-row">
+                      <span className="sr-only">Offer price: </span>
+                      <span className="duration-card-price">{prog.price}</span>
+                    </div>
                   </div>
                   <p className="duration-card-tagline">{prog.tagline}</p>
                 </div>
@@ -179,7 +203,7 @@ export default function PersonalizedPrograms() {
                 <button
                   onClick={() => handleOpenBooking(`${prog.name} (${prog.duration})`)}
                   className="duration-card-cta"
-                  aria-label={`Get Started with ${prog.name} ${prog.duration} program for ${prog.price}`}
+                  aria-label={`Get Started with ${prog.name} ${prog.duration} program for ${prog.price} (Original ${prog.originalPrice})`}
                 >
                   <span>Get Started</span>
                   <ArrowRight size={16} />

@@ -2679,32 +2679,53 @@
    DURATION-BASED NUTRITION PROGRAMS (3 PLANS)
    ============================================ */
 .duration-promo-banner {
-  margin: 32px auto 48px;
-  max-width: 780px;
-  background: linear-gradient(135deg, rgba(253, 232, 224, 0.9) 0%, rgba(255, 245, 240, 0.95) 100%);
+  margin: 28px auto 44px;
+  max-width: 720px;
+  background: linear-gradient(135deg, rgba(253, 232, 224, 0.95) 0%, rgba(255, 245, 240, 0.98) 100%);
   border: 1.5px dashed var(--color-nutrekha-pink-light);
   border-radius: 20px;
-  padding: 16px 28px;
+  padding: 14px 24px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  box-shadow: 0 4px 18px rgba(212, 98, 122, 0.08);
+  gap: 6px;
+  box-shadow: 0 4px 20px rgba(212, 98, 122, 0.08);
 }
 
-.duration-promo-icon {
+.duration-promo-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-nutrekha-pink);
+  background: #FFFFFF;
+  padding: 3px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 98, 122, 0.25);
+  box-shadow: 0 2px 6px rgba(212, 98, 122, 0.06);
+}
+
+.duration-promo-sparkle {
   color: var(--color-nutrekha-pink);
   flex-shrink: 0;
 }
 
 .duration-promo-text {
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--color-nutrekha-green);
   text-align: center;
   line-height: 1.45;
+  margin: 0;
+}
+
+.duration-promo-highlight {
+  color: var(--color-nutrekha-pink);
+  font-weight: 900;
 }
 
 .duration-grid {
@@ -2719,13 +2740,14 @@
 .duration-card {
   position: relative;
   background: #FFFFFF;
-  border: 1px solid #EBDCD0;
+  border: 1.5px solid #F0DFD7;
   border-radius: 26px;
-  padding: 38px 28px 30px;
+  padding: 40px 28px 30px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 30px rgba(45, 74, 45, 0.05);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  height: 100%;
 }
 
 .duration-card:hover {
@@ -2734,20 +2756,21 @@
   box-shadow: 0 16px 40px rgba(45, 74, 45, 0.09);
 }
 
+/* Popular card styling (balanced scale so all 3 cards stay level and same width) */
 .duration-card.popular {
-  border: 2px solid var(--color-nutrekha-pink);
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F6 100%);
-  box-shadow: 0 16px 44px rgba(212, 98, 122, 0.16);
-  transform: scale(1.03);
+  border: 1.5px solid #E29CA9;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F7 100%);
+  box-shadow: 0 12px 36px rgba(212, 98, 122, 0.12);
   z-index: 2;
 }
 
 .duration-card.popular:hover {
-  transform: scale(1.03) translateY(-6px);
-  box-shadow: 0 20px 50px rgba(212, 98, 122, 0.22);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(212, 98, 122, 0.2);
 }
 
-.duration-badge-popular {
+/* 🎁 WELCOME OFFER – 15% OFF Pill Badge (Consistent across ALL 3 cards) */
+.duration-card-offer-badge {
   position: absolute;
   top: -15px;
   left: 50%;
@@ -2756,21 +2779,35 @@
   color: #FFFFFF;
   font-size: 0.72rem;
   font-weight: 800;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   padding: 6px 18px;
-  border-radius: 50px;
-  box-shadow: 0 4px 14px rgba(212, 98, 122, 0.35);
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(212, 98, 122, 0.32);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  z-index: 3;
+}
+
+.duration-offer-icon {
+  flex-shrink: 0;
 }
 
 .duration-card-header {
   text-align: center;
-  padding-bottom: 22px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #F0E4DC;
+}
+
+.duration-tag-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 26px;
+  margin-bottom: 8px;
 }
 
 .duration-tag {
@@ -2780,29 +2817,86 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-nutrekha-pink);
-  margin-bottom: 8px;
+}
+
+.duration-popular-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-nutrekha-green);
+  background: #EBF3EC;
+  border: 1px solid #D2E4D4;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.duration-chip-sparkle {
+  color: #D4627A;
 }
 
 .duration-card-title {
   font-size: 1.85rem;
   font-weight: 800;
   color: var(--color-nutrekha-green);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
 
+/* Price presentation: Crossed-out original + Bold offer price */
 .duration-card-price-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 68px;
+  margin: 4px 0 10px;
+}
+
+.duration-original-price-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.duration-original-price {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #8C9A8D;
+  text-decoration: line-through;
+  text-decoration-color: #B88590;
+  text-decoration-thickness: 1.5px;
+}
+
+.duration-discount-tag {
+  background: #FDE8E0;
+  color: #D4627A;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid #F5C6D0;
+  line-height: 1.3;
+}
+
+.duration-offer-price-row {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 6px;
 }
 
 .duration-card-price {
   font-size: 2.35rem;
   font-weight: 900;
-  color: var(--color-nutrekha-green);
-  line-height: 1;
+  color: var(--color-nutrekha-pink);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .duration-card-period {
@@ -2814,8 +2908,12 @@
 .duration-card-tagline {
   font-size: 0.84rem;
   color: #64748B;
-  margin-top: 8px;
+  margin-top: 6px;
   line-height: 1.45;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .duration-features-list {
@@ -2855,6 +2953,7 @@
   color: var(--color-nutrekha-pink);
 }
 
+/* Consistent CTA button across ALL THREE cards per requirement */
 .duration-card-cta {
   width: 100%;
   padding: 14px 20px;
@@ -2866,28 +2965,17 @@
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid var(--color-nutrekha-green);
-  background: transparent;
-  color: var(--color-nutrekha-green);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--color-nutrekha-pink) 0%, #BA4860 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 20px rgba(212, 98, 122, 0.28);
 }
 
 .duration-card-cta:hover {
-  background: var(--color-nutrekha-green);
-  color: #FFFFFF;
-  box-shadow: 0 6px 18px rgba(45, 74, 45, 0.2);
-}
-
-.duration-card.popular .duration-card-cta {
-  background: linear-gradient(135deg, var(--color-nutrekha-pink) 0%, #BA4860 100%);
-  border-color: transparent;
-  color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(212, 98, 122, 0.3);
-}
-
-.duration-card.popular .duration-card-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(212, 98, 122, 0.4);
+  box-shadow: 0 10px 24px rgba(212, 98, 122, 0.38);
+  background: linear-gradient(135deg, #DF7087 0%, #C45068 100%);
 }
 
 /* Bottom Benefit Strip */
@@ -3074,7 +3162,7 @@
   }
 
   .duration-promo-text {
-    font-size: 0.85rem;
+    font-size: 0.92rem;
   }
 
   .duration-benefits-strip {
@@ -3102,6 +3190,39 @@
   .duration-dm-btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .duration-card {
+    padding: 36px 18px 24px;
+  }
+
+  .duration-card-offer-badge {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+    letter-spacing: 0.08em;
+    max-width: calc(100% - 20px);
+  }
+
+  .duration-card-title {
+    font-size: 1.6rem;
+  }
+
+  .duration-card-price {
+    font-size: 2.1rem;
+  }
+
+  .duration-original-price {
+    font-size: 1rem;
+  }
+
+  .duration-promo-banner {
+    padding: 12px 14px;
+  }
+
+  .duration-promo-text {
+    font-size: 0.86rem;
   }
 }
 
